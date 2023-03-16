@@ -1,9 +1,14 @@
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - it is used for fuct
+ * return: it return 1
+ */
 
 int main(void)
 {
-	const char* message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	write(STDERR_FILENO, message, sizeof(message) - 1 );
-	return 1;
+	fprint(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19");
+	return (1);
 }
 
