@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - this is main
- * Return: returns 0
+ * main - main func
+ * Return: this project return 0 (success)
  */
 
 int main(void)
