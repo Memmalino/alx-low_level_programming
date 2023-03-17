@@ -2,8 +2,8 @@
 #include <unistd.h>
 
 /**
- * main - it is used for fuct
- * return: the successful return is 1
+ * main - A programm that prints a line
+ * Return: (Successful) return is 1
  */
 
 int main(void)
