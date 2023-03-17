@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 
 /**
  * main - this ia a main fnc
@@ -18,3 +18,4 @@ int main(void)
 
 	return (0);
 }
+
