@@ -1,4 +1,5 @@
 #include <stdio.h>
+		i
 
 /**
  * main - this func prints combination of numbers
