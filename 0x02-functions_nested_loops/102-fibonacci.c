@@ -9,11 +9,12 @@ int main(void)
 {
 int n = 50;
 int fib[n];
+int i;
 
 fib[0] = 1;
 fib[1] = 2;
 printf("%d, %d, ", fib[0], fib[1]);
-for (int i = 2; i < n; i++)
+for (i = 2; i < n; i++)
 {
 fib[i] = fib[i - 1] + fib[i - 2];
 printf("%d", fib[i]);
