@@ -1,31 +1,29 @@
 #include <stdio.h>
 
 /**
- * main - main function
+ * main - main funct
  * Return: zero always
  */
 
+
 int main(void)
 {
-int n = 50;
-int fib[50];
-int i;
+	int i, num = 50;
+	long m1 = 1, m2 = 2, nterm;
 
-fib[0] = 1;
-fib[1] = 2;
-printf("%d, %d, ", fib[0], fib[1]);
-for (i = 2; i < n; i++)
-{
-fib[i] = fib[i - 1] + fib[i - 2];
-printf("%d", fib[i]);
-if (i <  n - 1)
-{
-printf(", ");
-}
-else
-{
-printf("\n");
-}
-}
-return (0);
+	printf("%ld, %ld, ", m1, m2);
+
+	for (i = 3; i <= num; i++)
+	{
+	nterm = m1 + m2;
+	m1 = m2;
+	m2= nterm;
+	printf("%ld", nterm);
+	if (i < num)
+	{
+	printf(", ");
+	}
+	}
+	printf("\n");
+	return (0);
 }
