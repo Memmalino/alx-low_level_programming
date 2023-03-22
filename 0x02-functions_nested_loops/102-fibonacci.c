@@ -17,7 +17,7 @@ for (int i = 2; i < n; i++)
 {
 fib[i] = fib[i - 1] + fib[i - 2];
 printf("%d", fib[i]);
-If (i <  (n - 1))
+if (i <  n - 1)
 {
 printf(", ");
 }
