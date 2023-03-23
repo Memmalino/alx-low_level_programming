@@ -16,7 +16,7 @@ int main(void)
 	if (o % 2 == 0)
 	sum += o;
 	n = o - n;
-	++i;
+	++m;
 	}
 	printf("%ld\n", sum);
 	return (0);
