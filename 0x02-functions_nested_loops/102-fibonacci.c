@@ -16,7 +16,7 @@ int main(void)
 	{
 	nterm = m1 + m2;
 	m1 = m2;
-	m2= nterm;
+	m2 = nterm;
 	printf("%ld", nterm);
 	if (i < num)
 	{
