@@ -5,7 +5,6 @@
  * Return: zero always
  */
 
-
 int main(void)
 {
 	int i, num = 50;
