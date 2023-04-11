@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void free_grid(int **grid, int height);
+void free_grid(int **grid, int height)
 {
 	int i;
 
@@ -16,6 +16,6 @@ void free_grid(int **grid, int height);
 	{
 		free(grid[i]);
 	}
-	gree(grid);
+	free(grid);
 }
 
