@@ -1,45 +1,88 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * print_listint_safe -This function prints all the data in the
+ * len - This function will help to count the
+ * number of unique nodes in the looped listint_t linked list.
+ * @head: A pointer to the head of the listint_t list.
+ *
+ * Return: The function returns thenumber of nodes in
+ * the listint_t linked list
+ */
+
+size_t len(const listint_t *head)
+{
+	const listint_t *i, *a;
+	size_t nodes = 1;
+
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	i = head->next;
+	a = (head->next)->next;
+
+	while (a)
+	{
+		if (i == a)
+		{
+			i = head;
+			while (i != a)
+			{
+				nodes++;
+				i = i->next;
+				a = a->next;
+			}
+
+			i = i->next;
+			while (i != a)
+			{
+				nodes++;
+				i = i->next;
+			}
+
+			return (nodes);
+		}
+
+		i = i->next;
+		a = (a->next)->next;
+	}
+
+	return (0);
+}
+
+/**
+ * print_listint_safe -function that  prints all the data in the
  * listint_t list.
- * @head: Argument that points to the head of the listint_t linked  list.
+ * @head: A pointer to the head of the listint_t linked  list.
  *
  * Return: The function returns the number of nodes in the list.
  */
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *slow = head, *fast = head;
-	size_t count = 0;
+	size_t nodes, index = 0;
 
-	while (slow && fast && fast->next)
+	nodes = len(head);
+
+	if (nodes == 0)
 	{
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		count++;
-
-		slow = slow->next;
-		fast = fast->next->next;
-
-		if (slow == fast)
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			count++;
-			break;
-		}
-	}
-	if (!slow || !fast || !fast->next)
-	{
-		while (head)
+		for (; head != NULL; nodes++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			count++;
 			head = head->next;
 		}
 	}
-	if (!slow || !fast || !fast->next)
+
+	else
 	{
-		exit(98);
+		for (index = 0; index < nodes; index++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
-	return (count);
+
+	return (nodes);
 }
