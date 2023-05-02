@@ -5,20 +5,21 @@
  * @head: the nodes to be free and set to null
  * Return: void
  */
-
 void free_listint2(listint_t **head)
 {
-listint_t *current;
+	listint_t *current;
+	listint_t *next;
 
 	if (head == NULL)
 	{
 		return;
 	}
-	while (*head == NULL)
+	current = *head;
+	while (current != NULL)
 	{
-		current = (*head)->next;
-		free(*head);
-		*head = current;
+		next = current->next;
+		free(current);
+		current = next;
 	}
 	*head = NULL;
 }
