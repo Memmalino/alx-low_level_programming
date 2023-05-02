@@ -6,30 +6,32 @@
  *
  *Return: The address of the node, or NULL if there is no loop
  */
-
 listint_t *find_listint_loop(listint_t *head)
 {
-listint_t *tortoise, *hare;
+	listint_t *node_1 = head;
+	listint_t *node_2 = head;
 
-if (head == NULL)
-	return (NULL);
-
-	tortoise = head;
-	hare = head;
-	while (hare != NULL && hare->next != NULL)
+	if (head == NULL)
 	{
-		tortoise = tortoise->next;
-		hare = hare->next->next;
-		if (tortoise == hare)
+		return (NULL);
+	}
+
+	while (node_1 && node_2 && node_2->next)
+	{
+		node_2 = node_2->next->next;
+		node_1 = node_1->next;
+		if (node_2 == node_1)
 		{
-		tortoise = head;
-		while (tortoise != hare)
-		{
-			tortoise = tortoise->next;
-			hare = hare->next;
-		}
-		return (tortoise);
+			node_1 = head;
+			while (node_1 != node_2)
+			{
+				node_1 = node_1->next;
+				node_2 = node_2->next;
+			}
+			return (node_2);
 		}
 	}
+
 	return (NULL);
 }
+
