@@ -9,26 +9,24 @@
  * Return: 1 on succes, -1 on failure
  */
 
-int append_text_to_file(const char *filename, char *text_content){
-    
-	int bytes_written, fd;
-	
+int append_text_to_file(const char *filename, char *text_content)
+{
+	int bytes_writt, a;
+
 	if (filename == NULL)
-	{
 		return (-1);
-	}
-	fd = open(filename, O_WRONLY | O_APPEND);
-	if (fd == -1)
+	a = open(filename, O_WRONLY | O_APPEND);
+	if (a == -1)
 		return (-1);
 	if (text_content != NULL)
 	{
-		bytes_written = write(fd, text_content, strlen(text_content));
+		bytes_written = write(a, text_content, strlen(text_content));
 		if (bytes_written == -1)
 		{
-			close(fd);
+			close(a);
 			return (-1);
 		}
 	}
-	close(fd);
+	close(a);
 	return (1);
 }
