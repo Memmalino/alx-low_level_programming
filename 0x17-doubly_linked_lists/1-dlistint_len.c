@@ -2,7 +2,6 @@
 
 /**
  * dlistint_len - count the number of nodes in the linked list
- * owned by asofeyeje
  * @h: pointer to the beginning of a linked list
  *
  * Return: number of nodes
