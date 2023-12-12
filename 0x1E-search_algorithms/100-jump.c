@@ -1,7 +1,7 @@
 #include "search_algos.h"
 #include <math.h>
 /**
- * jump_search - jump search algorithm 
+ * jump_search - jump search algorithm
  * @array: pointer to the head of an array to search
  * @size: size of array
  * @value: value to search for
